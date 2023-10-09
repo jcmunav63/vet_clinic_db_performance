@@ -36,11 +36,11 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Vet Clinic App] <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
-**[your_project__name]** is a...
+**[Vet Clinic App]** It's a simple web app for managing and displaying information about animals, services, and clients of a local Vet Clinic.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -75,9 +75,9 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 > Describe between 1-3 key features of the application.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **[Connects and interacts with a local or remote database server, using a PostgreSQL DBMS]**
+- **[Includes front end components using React.js]**
+- **[Implements a basic back end logic for connecting the main components with the database server]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -183,9 +183,9 @@ Example:
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@jcmunav63](https://github.com/jcmunav63)
+- Twitter: [@jcmunav63](https://twitter.com/jcmunav63)
+- LinkedIn: [@juan-carlos-muñoz-navarrete](https://www.linkedin.com/in/juan-carlos-mu%C3%B1oz-navarrete-5a15b6276/)
 
 👤 **Author2**
 
