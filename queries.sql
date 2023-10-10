@@ -35,7 +35,43 @@ ROLLBACK;
 --   * Rollback to the savepoint;
 --   * Update all animals' weights that are negative to be their weight multiplied by -1;
 --   * Commit transaction.
+BEGIN TRANSACTION;
+DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+SAVEPOINT SP1;
 
+UPDATE animals set weight_kg = (weight_kg * -1);
+ROLLBACK TO SP1;
+
+UPDATE animals SET weight_kg = (weight_kg * -1) WHERE weight_kg < 0;
+COMMIT;
+
+/* QUERYING THE DATABASE */
+
+-- 1) How many animals are there?
+SELECT COUNT(name) FROM animals; --10 ANIMALS
+
+-- 2) How many animals have never tried to escape?
+SELECT COUNT(name) FROM animals WHERE (escape_attempts = 0); --2 ANIMALS
+
+-- 3) What is the average weight of animals?
+SELECT AVG(weight_kg) FROM animals; -- AVERAGE WEIGHT 15.55 kg
+
+-- 4) Who escapes the most, neutered or non neutered animals?
+SELECT neutered, SUM(escape_attempts) FROM animals GROUP BY neutered;
+-- NEUTERED ANIMALS ATTEMPTED ESCAPE 20 TIMES, VS NON NEUTERED 4 TIMES.
+
+-- 5) What is the minimum and maximum weight of each type of animal?
+SELECT species, MAX(weight_kg) FROM animals GROUP BY species;
+-- MAXIMUM WEIGHT: pokemon 17 kg; digimon 45 kg
+SELECT species, MIN(weight_kg) FROM animals GROUP BY species;
+-- MINIMUM WEIGHT: pokemon 11 kg; digimon 5.7 kg
+
+-- 6) What is the average number of escape attempts per animal type of
+--    those born between 1990 and 2000?
+SELECT species, AVG(escape_attempts) FROM animals
+WHERE (date_of_birth > '1989-12-31' AND date_of_birth < '2001-01-01')
+GROUP BY species;
+-- ONLY POKEMON species averages 3.0 escape attempts.
 
 
 /* FEATURE BRANCH 01-create-animals-table */
