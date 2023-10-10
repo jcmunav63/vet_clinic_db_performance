@@ -72,21 +72,9 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - **[Connects and interacts with a local or remote database server, using a PostgreSQL DBMS]**
 - **[Includes front end components using React.js]**
 - **[Implements a basic back end logic for connecting the main components with the database server]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Waiting to be deployed...
-
-- [Live Demo Link](<https://>)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -171,14 +159,6 @@ To run linters checking, run the following command:
   npx eslint "**/*.{js,jsx}" (--fix option)
 ```
 
-### Deployment
-
-You can deploy this project using:
-
-> Waiting to be deployed...
-
-- [Live Demo Link](<https://>)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
@@ -191,19 +171,11 @@ You can deploy this project using:
 - Twitter: [@jcmunav63](https://twitter.com/jcmunav63)
 - LinkedIn: [@juan-carlos-muñoz-navarrete](https://www.linkedin.com/in/juan-carlos-mu%C3%B1oz-navarrete-5a15b6276/)
 
-👤 **Author2**
-
-- GitHub: [@github](https://)
-- Twitter: [@twitter](https://)
-- LinkedIn: [LinkedIn](https://e)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - [ A ] **[Development of all front end components]**
 - [ B ] **[Development of back end logic]**
@@ -234,20 +206,6 @@ If you like this project, please support me with a like or a star.
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 Thank you to my learning partners and the staff at Microverse.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ <a name="faq"></a>
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
