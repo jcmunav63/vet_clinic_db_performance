@@ -1,4 +1,38 @@
-/* Populate database with sample data. */
+/* FEATURE BRANCH 03-querying-multiple-tables */
+
+-- D) INSERT values into the OWNERS table
+INSERT INTO owners (full_name, age) VALUES
+('Sam Smith', '34'),
+('Jennifer Orwell', '19'),
+('Bob', '45'),
+('Melody Pond', '77'),
+('Dean Winchester', '14'),
+('Jodie Whittaker', '38');
+
+-- E) INSERT values into the SPECIES table
+INSERT INTO species (name) VALUES
+('Pokemon'),
+('Digimon');
+
+-- F) INSERT Species IDs into the animals table
+UPDATE animals SET species_id = '2' WHERE name LIKE '%mon';
+UPDATE animals SET species_id = '1' WHERE species_id is NULL;
+
+-- G) INSERT Owners IDs into the animals table 
+-- Sam Smith owns Agumon:
+UPDATE animals SET owner_id = '1' WHERE id = 1;
+-- Jennifer Orwell owns Gabumon and Pikachu:
+UPDATE animals SET owner_id = '2' WHERE id in (2, 3);
+-- Bob owns Devimon and Plantmon:
+UPDATE animals SET owner_id = '3' WHERE id in (4, 6);
+-- Melody Pond owns Charmander, Squirtle, and Blossom:
+UPDATE animals SET owner_id = '4' WHERE id in (5, 7, 10);
+-- Dean Winchester owns Angemon and Boarmon:
+UPDATE animals SET owner_id = '5' WHERE id in (8, 9);
+
+-- H) QUERY TABLES USING JOIN
+
+
 
 /* FEATURE BRANCH 02-query-and-update-animals-table */
 
