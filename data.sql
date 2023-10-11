@@ -30,9 +30,6 @@ UPDATE animals SET owner_id = '4' WHERE id in (5, 7, 10);
 -- Dean Winchester owns Angemon and Boarmon:
 UPDATE animals SET owner_id = '5' WHERE id in (8, 9);
 
--- H) QUERY TABLES USING JOIN
-
-
 
 /* FEATURE BRANCH 02-query-and-update-animals-table */
 
