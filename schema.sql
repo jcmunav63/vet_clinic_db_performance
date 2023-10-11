@@ -1,5 +1,47 @@
 /* Database schema to keep the structure of entire database. */
 
+/* FEATURE BRANCH 03-querying-multiple-tables */
+
+-- A) Create new table called OWNERS with columns id, full_name & age.
+CREATE TABLE owners
+(
+    id serial NOT NULL,
+    full_name character varying(120) NOT NULL,
+    age integer,
+    PRIMARY KEY(id)
+);
+
+-- B) Create new table called SPECIES with columns id & name.
+CREATE TABLE species
+(
+    id serial NOT NULL,
+    name character varying(100) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+-- C) MODIFY animals table, make sure the id column is an autoincremented
+--    PRIMARY KEY; remove column species; add column species_id (foreign key);
+--     add column owner_id (foreign key).
+ALTER TABLE animals
+DROP COLUMN species,
+ADD owwner_id integer,
+ADD species_id integer;
+
+ALTER TABLE animals ADD PRIMARY KEY (id);
+
+ALTER TABLE animals
+    ADD CONSTRAINT fk_owner 
+    FOREIGN KEY (owner_id) 
+    REFERENCES owners (id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+    ADD CONSTRAINT fk_species
+    FOREIGN KEY (species_id)
+    REFERENCES species (id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE;
+
+
 /* FEATURE BRANCH 02-query-and-update-animals-table */
 
 -- A) ADD a column species of type string to the animals table.
