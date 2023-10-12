@@ -1,7 +1,5 @@
 # VET_CLINIC APP [curriculum-databases-projects-template]
 
-## Getting Started
-
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->

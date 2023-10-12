@@ -15,20 +15,35 @@ INSERT INTO species (name) VALUES
 ('Digimon');
 
 -- F) INSERT Species IDs into the animals table
-UPDATE animals SET species_id = '2' WHERE name LIKE '%mon';
-UPDATE animals SET species_id = '1' WHERE species_id is NULL;
+UPDATE animals 
+SET species_id = (SELECT id from species WHERE name = 'Digimon') 
+WHERE name LIKE '%mon';
+
+UPDATE animals 
+SET species_id = (SELECT id from species WHERE name = 'Pokemon') 
+WHERE species_id is NULL;
 
 -- G) INSERT Owners IDs into the animals table 
 -- Sam Smith owns Agumon:
-UPDATE animals SET owner_id = '1' WHERE id = 1;
+UPDATE animals 
+SET owner_id = (SELECT id from owners where full_name = 'Sam Smith') 
+WHERE id = 1;
 -- Jennifer Orwell owns Gabumon and Pikachu:
-UPDATE animals SET owner_id = '2' WHERE id in (2, 3);
+UPDATE animals 
+SET owner_id = (SELECT id from owners where full_name = 'Jennifer Orwell') 
+WHERE id in (2, 3);
 -- Bob owns Devimon and Plantmon:
-UPDATE animals SET owner_id = '3' WHERE id in (4, 6);
+UPDATE animals 
+SET owner_id = (SELECT id from owners where full_name = 'Bob') 
+WHERE id in (4, 6);
 -- Melody Pond owns Charmander, Squirtle, and Blossom:
-UPDATE animals SET owner_id = '4' WHERE id in (5, 7, 10);
+UPDATE animals 
+SET owner_id = (SELECT id from owners where full_name = 'Melody Pond') 
+WHERE id in (5, 7, 10);
 -- Dean Winchester owns Angemon and Boarmon:
-UPDATE animals SET owner_id = '5' WHERE id in (8, 9);
+UPDATE animals 
+SET owner_id = (SELECT id from owners where full_name = 'Dean Winchester') 
+WHERE id in (8, 9);
 
 
 /* FEATURE BRANCH 02-query-and-update-animals-table */

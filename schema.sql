@@ -24,7 +24,7 @@ CREATE TABLE species
 --     add column owner_id (foreign key).
 ALTER TABLE animals
 DROP COLUMN species,
-ADD owwner_id integer,
+ADD owner_id integer,
 ADD species_id integer;
 
 ALTER TABLE animals ADD PRIMARY KEY (id);
