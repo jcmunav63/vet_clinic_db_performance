@@ -2,12 +2,6 @@
 
 ## Getting Started
 
-This repository includes files with plain SQL that can be used to recreate a database:
-
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
-
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
@@ -47,26 +41,9 @@ This repository includes files with plain SQL that can be used to recreate a dat
 ### Tech Stack <a name="tech-stack"></a>
 
 - HTML5, CSS3 & JAVASCRIPT.
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
+- REACT.JS (Front End).
+- EXPRESS.JS (Back End).
+- POSTGRESQL (Database server).
 
 <!-- Features -->
 
@@ -177,9 +154,9 @@ To run linters checking, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ A ] **[Development of all front end components]**
-- [ B ] **[Development of back end logic]**
-- [ C ] **[Testing of front and back end components]**
+- **[Development of all front end components]**
+- **[Development of back end logic]**
+- **[Testing of front and back end components]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

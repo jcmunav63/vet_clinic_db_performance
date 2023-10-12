@@ -1,5 +1,53 @@
 /*Queries that provide answers to the questions from all projects.*/
 
+/* FEATURE BRANCH 03-querying-mulltiple-tables */
+
+-- H) QUERYING THE TABLES
+-- 1) What animals belong to Melody Pond?
+SELECT animals.name, owners.full_name FROM animals
+JOIN owners ON (animals.owner_id = owners.id 
+AND owners.full_name LIKE 'Melody Pond');
+
+-- 2) List of all animals that are pokemon (their type is Pokemon):
+SELECT animals.name, species.name FROM animals
+JOIN species ON (animals.species_id = species.id 
+AND species.name LIKE 'Pokemon');
+
+-- 3) List all owners and their animals, remember to 
+--    include those that don't own any animal
+SELECT owners.full_name, animals.name FROM owners
+LEFT JOIN animals ON (owners.id = animals.owner_id);
+
+-- 4) How many animals are there per species?
+SELECT COUNT(animals.name), species.name FROM animals
+JOIN species ON (animals.species_id = species.id) GROUP BY species.name;
+
+-- 5) List all Digimon owned by Jennifer Orwell...
+SELECT animals.name as animal_name, owners.full_name as owner_name, 
+species.name as species 
+FROM animals
+JOIN owners ON (animals.owner_id = owners.id
+AND owners.full_name like 'Jennifer Orwell')
+JOIN species ON (animals.species_id = species.id);
+
+-- 6) List all animals owned by Dean Winchester that haven't 
+--    tried to escape
+SELECT animals.name as animal_name, owners.full_name as owner_name, 
+animals.escape_attempts 
+FROM animals
+JOIN owners ON (animals.owner_id = owners.id
+AND owners.full_name like 'Dean Winchester');
+-- ALL HIS ANIMALS HAVE TRIED TO ESCAPE
+
+-- 7) Who owns the most animals?
+SELECT owners.full_name as owner_name, COUNT(animals.name)
+FROM owners
+LEFT JOIN animals ON (owners.id = animals.owner_id)
+GROUP BY owners.full_name;
+-- MELODY POND OWNS THE MOST ANIMALS (3)
+
+
+
 /* FEATURE BRANCH 02-query-and-update-animals-table */
 
 -- C) TRANSACTION: Update species column and ROLLBACK
