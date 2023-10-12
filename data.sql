@@ -27,7 +27,105 @@ VALUES ((select (id) from vets where name = 'Jack Harkness'),
 	(select (id) from species where name = 'Digimon'));
 
 -- C-3) Inserting data into VISITS table...
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Agumon'),
+	(select (id) from vets where name = 'William Tatcher'), 
+	'2020-05-24');
 
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Agumon'),
+	(select (id) from vets where name = 'Stephanie Mendez'), 
+	'2020-07-22');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Gabumon'),
+	(select (id) from vets where name = 'Jack Harkness'), 
+	'2021-02-02');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Pikachu'),
+	(select (id) from vets where name = 'Maisy Smith'), 
+	'2020-01-05');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Pikachu'),
+	(select (id) from vets where name = 'Maisy Smith'), 
+	'2020-03-08');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Pikachu'),
+	(select (id) from vets where name = 'Maisy Smith'), 
+	'2020-05-14');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Devimon'),
+	(select (id) from vets where name = 'Stephanie Mendez'), 
+	'2021-05-04');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Charmander'),
+	(select (id) from vets where name = 'Jack Harkness'), 
+	'2021-02-24');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Plantmon'),
+	(select (id) from vets where name = 'Maisy Smith'), 
+	'2019-12-21');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Plantmon'),
+	(select (id) from vets where name = 'William Tatcher'), 
+	'2020-08-10');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Plantmon'),
+	(select (id) from vets where name = 'Maisy Smith'), 
+	'2021-04-07');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Squirtle'),
+	(select (id) from vets where name = 'Stephanie Mendez'), 
+	'2019-09-29');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Angemon'),
+	(select (id) from vets where name = 'Jack Harkness'), 
+	'2020-10-03');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Angemon'),
+	(select (id) from vets where name = 'Jack Harkness'), 
+	'2020-11-04');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Boarmon'),
+	(select (id) from vets where name = 'Maisy Smith'), 
+	'2019-01-24');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Boarmon'),
+	(select (id) from vets where name = 'Maisy Smith'), 
+	'2019-05-15');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Boarmon'),
+	(select (id) from vets where name = 'Maisy Smith'), 
+	'2020-02-27');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Boarmon'),
+	(select (id) from vets where name = 'Maisy Smith'), 
+	'2020-08-03');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Blossom'),
+	(select (id) from vets where name = 'Stephanie Mendez'), 
+	'2020-05-24');
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) 
+VALUES ((select (id) from animals where name = 'Blossom'),
+	(select (id) from vets where name = 'William Tatcher'), 
+	'2021-01-11');
 
 
 /* FEATURE BRANCH 03-querying-multiple-tables */
