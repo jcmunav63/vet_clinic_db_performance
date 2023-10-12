@@ -1,3 +1,35 @@
+/* FEATURE BRANCH 04-Add-join-table-for-visits */
+
+-- C) Insert some data into VETS, SPECIALIZATIONS & VISITS tables...
+
+-- C-1) Inserting data into VETS table...
+INSERT INTO vets (name, age, date_of_graduation) 
+VALUES ('William Tatcher', '45', '2000-04-23'),
+('Maisy Smith', '26', '2019-01-17'),
+('Stephanie Mendez', '64', '1981-05-04'),
+('Jack Harkness', '38', '2008-06-08');
+
+-- C-2) Inserting data into SPECIALIZATIONS table...
+INSERT INTO specializations (vet_id, species_id) 
+VALUES ((select (id) from vets where name = 'William Tatcher'),
+	(select (id) from species where name = 'Pokemon'));
+
+INSERT INTO specializations (vet_id, species_id) 
+VALUES ((select (id) from vets where name = 'Stephanie Mendez'),
+	(select (id) from species where name = 'Pokemon'));
+
+INSERT INTO specializations (vet_id, species_id) 
+VALUES ((select (id) from vets where name = 'Stephanie Mendez'),
+	(select (id) from species where name = 'Digimon'));
+
+INSERT INTO specializations (vet_id, species_id) 
+VALUES ((select (id) from vets where name = 'Jack Harkness'),
+	(select (id) from species where name = 'Digimon'));
+
+-- C-3) Inserting data into VISITS table...
+
+
+
 /* FEATURE BRANCH 03-querying-multiple-tables */
 
 -- D) INSERT values into the OWNERS table
