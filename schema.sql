@@ -1,5 +1,56 @@
 /* Database schema to keep the structure of entire database. */
 
+/* FEATURE BRANCH 04-Add-join-table-for-visits */
+
+-- A) Create a table named VETS with the following columns...
+CREATE TABLE IF NOT EXISTS public.vets
+(
+    id integer NOT NULL DEFAULT nextval('vets_id_seq'::regclass),
+    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    age integer,
+    date_of_graduation date,
+    CONSTRAINT vets_pkey PRIMARY KEY (id)
+);
+
+-- B) Add MANY-TO-MANY relationships with SPECIES & ANIMALS tables...
+
+-- B-1) Creating the SPECIALIZATIONS join table:
+CREATE TABLE IF NOT EXISTS public.specializations
+(
+    id integer NOT NULL DEFAULT nextval('specializations_id_seq'::regclass),
+    vet_id integer NOT NULL,
+    species_id integer NOT NULL,
+    CONSTRAINT specializations_pkey PRIMARY KEY (id),
+    CONSTRAINT fk_species_id FOREIGN KEY (species_id)
+        REFERENCES public.species (id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+        NOT VALID,
+    CONSTRAINT fk_vet_id FOREIGN KEY (vet_id)
+        REFERENCES public.vets (id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+);
+
+-- B-2) Creating the VISITS join table:
+CREATE TABLE IF NOT EXISTS public.visits
+(
+    id integer NOT NULL DEFAULT nextval('visits_id_seq'::regclass),
+    animal_id integer NOT NULL,
+    vet_id integer NOT NULL,
+    date_of_visit date NOT NULL,
+    CONSTRAINT visits_pkey PRIMARY KEY (id),
+    CONSTRAINT fk_animal_id FOREIGN KEY (animal_id)
+        REFERENCES public.animals (id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+    CONSTRAINT fk_vet_id FOREIGN KEY (vet_id)
+        REFERENCES public.vets (id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+);
+
+
 /* FEATURE BRANCH 03-querying-multiple-tables */
 
 -- A) Create new table called OWNERS with columns id, full_name & age.
