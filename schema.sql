@@ -110,3 +110,20 @@ CREATE TABLE animals
     neutered boolean,
     weight_kg real
 );
+
+-- WEEK TWO, Database performance audit 
+
+-- This is our required changes before analyzing the queries.
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- And the following three are for improving performance.
+-- *** CREATING AN INDEX FOR EMAILS INTO OWNERS TABLE ***
+CREATE INDEX idx_owners_email ON public.owners (email);
+
+-- *** CREATING AN INDEX FOR ANIMALS ID INTO VISITS TABLE ***
+CREATE INDEX idx_visits_animal_id ON public.visits (animal_id);
+
+-- *** CREATING AN INDEX FOR VETS ID INTO VISITS TABLE ***
+CREATE INDEX idx_visits_vet_id ON public.visits (vet_id);
+
+
